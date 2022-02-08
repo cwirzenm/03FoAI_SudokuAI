@@ -198,13 +198,3 @@ def sudoku_solver(sudoku):
         return np.full((9, 9), -1)
     else:
         return sudoku
-
-
-sudoku = np.load("data/hard_puzzle.npy")
-puzzle_index = 14
-start_time = time.process_time()
-solved_sudoku = sudoku_solver(sudoku[puzzle_index])
-end_time = time.process_time()
-print(solved_sudoku)
-print(np.array_equal(np.load("data/hard_solution.npy")[puzzle_index], solved_sudoku))
-print("This sudoku took", end_time - start_time, "seconds to solve.\n")
